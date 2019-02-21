@@ -3,6 +3,6 @@ export class Task{
     constructor(public description: string, public priority: string){}
 
     markDone(){
-        this.done = false;
+        this.done = true;
     }
 }
