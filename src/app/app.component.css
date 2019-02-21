@@ -1,3 +1,9 @@
 h1{
     color: green !important;
 }
+.task_done{
+    background-color: #00FFFF;
+}
+.task_not_done{
+    background-color: red;
+}

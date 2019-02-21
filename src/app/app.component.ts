@@ -18,4 +18,11 @@ export class AppComponent {
     new Task('Lauch a website', 'high'),
     new Task('Lose weight', 'high'),
   ]
+  colourTasks(task: Task): string{
+    if(task.done){
+      return "task_done"
+    }else{
+      return "task_not_done"
+    }
+  }
 }
