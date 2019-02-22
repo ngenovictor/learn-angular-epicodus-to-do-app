@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Task } from '../task.model';
 
 @Component({
@@ -12,14 +12,9 @@ export class TaskListComponent implements OnInit {
 
   ngOnInit() {
   }
-  tasks: Task[] = [
-    new Task('Do dishes', 'high'),
-    new Task('Do homework', 'high'),
-    new Task('Beat Tony', 'high'),
-    new Task('Learn To code', 'high'),
-    new Task('Lauch a website', 'high'),
-    new Task('Lose weight', 'high'),
-  ]
+  // we get the list of tasks from the parent component
+  @Input() childTaskList: Task[];
+
   selectedTask: Task;
   colourTasks(task: Task): string{
     if(task.done){
@@ -36,8 +31,8 @@ export class TaskListComponent implements OnInit {
     }
   }
   deleteTask(task: Task){
-    let task_index = this.tasks.indexOf(task);
-    this.tasks.splice(task_index, 1);
+    let task_index = this.childTaskList.indexOf(task);
+    this.childTaskList.splice(task_index, 1);
   }
 
 }

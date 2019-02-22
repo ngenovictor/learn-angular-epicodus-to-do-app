@@ -3,7 +3,7 @@
     <h1>To DO List</h1>
     <p>I have the following tasks:</p>
     <button class="btn btn-primary" (click)="addNewTask()">Add New Task</button>
-    <app-task-list></app-task-list>
+    <app-task-list [childTaskList]="tasks"></app-task-list>
   </div>
   <div *ngIf="selectedTask">
     <form (submit)="editTask()">

@@ -9,8 +9,15 @@ import { Task } from './task.model';
 
 export class AppComponent {
   title = 'To-do';
-  
   selectedTask: Task;
+  tasks: Task[] = [
+    new Task('Do dishes', 'high'),
+    new Task('Do homework', 'high'),
+    new Task('Beat Tony', 'high'),
+    new Task('Learn To code', 'high'),
+    new Task('Lauch a website', 'high'),
+    new Task('Lose weight', 'high'),
+  ]
   
   addNewTask(){
     let createdTask: Task = new Task('', 'high');

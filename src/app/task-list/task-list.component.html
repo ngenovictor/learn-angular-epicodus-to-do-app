@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let task of tasks">
+    <tr *ngFor="let task of childTaskList">
       <td>{{ task.description }}</td>
       <td>{{ task.priority }}</td>
       <td [class]="colourTasks(task)">{{ task.done }}</td>
