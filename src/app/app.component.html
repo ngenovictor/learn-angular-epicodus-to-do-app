@@ -1,21 +1,23 @@
-<h1>To DO List</h1>
-<p>I have the following tasks:</p>
-<table>
-  <thead>
-    <tr>
-      <th>Description</th><th>Priority</th><th>Done</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let task of tasks">
-      <td>{{ task.description }}</td>
-      <td>{{ task.priority }}</td>
-      <td [class]="colourTasks(task)">{{ task.done }}</td>
-      <td><button (click)="task.markDone()">Do</button></td>
-    </tr>
-  </tbody>
-</table>
 <div>
-  <form action=""></form>
-  <input type="text" placeholder="add new task">
+    <h1>To DO List</h1>
+    <p>I have the following tasks:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th><th>Priority</th><th>Done</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.description }}</td>
+          <td>{{ task.priority }}</td>
+          <td [class]="colourTasks(task)">{{ task.done }}</td>
+          <td><button (click)="task.markDone()">Do</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <form action=""></form>
+      <input type="text" placeholder="add new task">
+    </div>
 </div>

@@ -20,9 +20,9 @@ export class AppComponent {
   ]
   colourTasks(task: Task): string{
     if(task.done){
-      return "task_done"
+      return "bg-info"
     }else{
-      return "task_not_done"
+      return "bg-danger"
     }
   }
 }
