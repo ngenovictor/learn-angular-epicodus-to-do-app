@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../task.model';
 
 @Component({
@@ -14,6 +14,7 @@ export class TaskListComponent implements OnInit {
   }
   // we get the list of tasks from the parent component
   @Input() childTaskList: Task[];
+  @Output() clickSender = new EventEmitter();  
 
   selectedTask: Task;
   colourTasks(task: Task): string{
@@ -24,11 +25,7 @@ export class TaskListComponent implements OnInit {
     }
   }
   editTask(task?: Task){
-    if(task){
-      this.selectedTask = task;
-    }else{
-      this.selectedTask = null;
-    }
+    this.clickSender.emit(task);
   }
   deleteTask(task: Task){
     let task_index = this.childTaskList.indexOf(task);

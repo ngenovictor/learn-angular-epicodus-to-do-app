@@ -24,4 +24,11 @@ export class AppComponent {
     this.tasks.push(createdTask);
     this.selectedTask = createdTask;
   }
+  editTask(task?: Task){
+    if(task){
+      this.selectedTask = task;
+    }else{
+      this.selectedTask = null;
+    }
+  }
 }
