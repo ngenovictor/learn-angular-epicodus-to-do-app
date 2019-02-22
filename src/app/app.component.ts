@@ -25,4 +25,12 @@ export class AppComponent {
       return "bg-danger"
     }
   }
+  selectedTask: Task;
+  editTask(task?: Task){
+    if(task){
+      this.selectedTask = task;
+    }else{
+      this.selectedTask = null;
+    }
+  }
 }
