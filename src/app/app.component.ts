@@ -9,7 +9,6 @@ import { Task } from './task.model';
 
 export class AppComponent {
   title = 'To-do';
-  task = new Task('Do dishes', 'high');
   tasks: Task[] = [
     new Task('Do dishes', 'high'),
     new Task('Do homework', 'high'),
@@ -32,5 +31,14 @@ export class AppComponent {
     }else{
       this.selectedTask = null;
     }
+  }
+  deleteTask(task: Task){
+    let task_index = this.tasks.indexOf(task);
+    this.tasks.splice(task_index, 1);
+  }
+  addNewTask(){
+    let createdTask: Task = new Task('', 'high');
+    this.tasks.push(createdTask);
+    this.selectedTask = createdTask;
   }
 }

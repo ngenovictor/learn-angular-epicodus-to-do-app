@@ -1,8 +1,9 @@
-<div>
+<div class="container">
   <div>
     <h1>To DO List</h1>
     <p>I have the following tasks:</p>
-    <table>
+    <button class="btn btn-primary" (click)="addNewTask()">Add New Task</button>
+    <table class="table table-dark">
       <thead>
         <tr>
           <th>Description</th><th>Priority</th><th>Done</th>
@@ -13,16 +14,19 @@
           <td>{{ task.description }}</td>
           <td>{{ task.priority }}</td>
           <td [class]="colourTasks(task)">{{ task.done }}</td>
-          <td><button (click)="task.markDone()">Do</button></td>
-          <td><button (click)="editTask(task)">Edit</button></td>
+          <td><button (click)="task.markDone()" class="btn btn-success">Do</button></td>
+          <td><button (click)="editTask(task)" class="btn btn-primary">Edit</button></td>
+          <td><button (click)="deleteTask(task)" class="btn btn-danger">Delete</button></td>
         </tr>
       </tbody>
     </table>
   </div>
   <div *ngIf="selectedTask">
     <form (submit)="editTask()">
-      <input type="text" [(ngModel)]="selectedTask.description" name="task_priority">
-      <button type="submit">OK</button>
+      <div class="form-group">
+        <input class="form-control" type="text" [(ngModel)]="selectedTask.description" name="task_priority">
+      </div>
+      <button type="submit" class="btn btn-primary">OK</button>
     </form>
   </div>
 </div>
